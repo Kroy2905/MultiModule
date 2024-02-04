@@ -7,12 +7,12 @@ plugins {
 
 android {
     namespace 'com.kroy.multimodule'
-    compileSdk 34
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.kroy.multimodule"
         minSdk 24
-        targetSdk 34
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -56,6 +56,7 @@ android {
 dependencies {
 
     implementation Deps.core
+    implementation 'androidx.appcompat:appcompat:1.6.1'
     implementation platform(Deps.kotlin_bom)
     implementation Deps.android_lifecycle
     implementation Compose.activity_compose
