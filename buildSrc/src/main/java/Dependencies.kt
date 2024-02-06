@@ -1,5 +1,6 @@
 object Versions{
         const val  corektx = "1.8.0"
+        const val  appcomat = "1.6.1"
         const val  android_lifecyle = "2.3.1"
         const val  activity_compose = "1.5.1"
         const val  junit = "4.13.2"
@@ -14,6 +15,7 @@ object Versions{
 //Android dependencies
 object Deps{
     const val  core = "androidx.core:core-ktx:${Versions.corektx}"
+   const val  appcompat = "androidx.appcompat:appcompat:${Versions.appcomat}"
     const val  kotlin_bom = "org.jetbrains.kotlin:kotlin-bom:${Versions.corektx}"
     const val  android_lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.android_lifecyle}"
     const val  junit = "junit:junit:${Versions.junit}"

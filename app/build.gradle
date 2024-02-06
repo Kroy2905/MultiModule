@@ -56,7 +56,7 @@ android {
 dependencies {
 
     implementation Deps.core
-    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation Deps.appcompat
     implementation platform(Deps.kotlin_bom)
     implementation Deps.android_lifecycle
     implementation Compose.activity_compose
