@@ -83,4 +83,6 @@ dependencies {
     implementation Dagger.dagger
     kapt Dagger.dagger_compiler
 
+    implementation project (":feature:movie:ui")
+
 }
