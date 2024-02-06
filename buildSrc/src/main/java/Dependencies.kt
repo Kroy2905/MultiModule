@@ -10,6 +10,7 @@ object Versions{
         const val  okhttp = "5.0.0-alpha.11"
         const val  gson = "2.10.1"
         const val  dagger_hilt = "2.44"
+        const val  compose_nav = "2.4.0-alpha10"
 
 }
 //Android dependencies
@@ -34,6 +35,7 @@ object Compose{
     const val  tooling = "androidx.compose.ui:ui-tooling"
 
     const val  test_manifest = "androidx.compose.ui:ui-test-manifest"
+    const val  navGraph = "androidx.navigation:navigation-compose:${Versions.compose_nav}"
 }
 
 object Dagger{
