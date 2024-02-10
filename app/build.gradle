@@ -1,3 +1,4 @@
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -7,12 +8,12 @@ plugins {
 
 android {
     namespace 'com.kroy.multimodule'
-    compileSdk 33
+    compileSdk Versions.compileSdk
 
     defaultConfig {
         applicationId "com.kroy.multimodule"
         minSdk 24
-        targetSdk 33
+        targetSdk Versions.compileSdk
         versionCode 1
         versionName "1.0"
 
@@ -82,6 +83,46 @@ dependencies {
 // Dagger Hilt for dependency injection
     implementation Dagger.dagger
     kapt Dagger.dagger_compiler
+
+    // Coroutine and Viewmodel
+
+    // ViewModel
+    implementation Viewmodel.viewmodel_ktx
+    // ViewModel utilities for Compose
+    implementation Viewmodel.viewmodel_compose
+    // LiveData
+    implementation Viewmodel.livedata
+    // Lifecycles only (without ViewModel or LiveData)
+    implementation Viewmodel.lifecycle_runtime
+
+    // Saved state module for ViewModel
+    implementation Viewmodel.savedstate
+
+    // Annotation processor
+    kapt Viewmodel.compiler
+    // alternately - if using Java8, use the following instead of lifecycle-compiler
+    implementation Viewmodel.common
+
+    // optional - helpers for implementing LifecycleOwner in a Service
+    implementation Viewmodel.service
+
+    // optional - ProcessLifecycleOwner provides a lifecycle for the whole application process
+    implementation Viewmodel.process
+
+    // optional - ReactiveStreams support for LiveData
+    implementation Viewmodel.reactivestreams
+
+    // optional - Test helpers for LiveData
+    testImplementation Viewmodel.testing
+
+    // optional - Test helpers for Lifecycle runtime
+    testImplementation Viewmodel.runtime_testing
+
+    implementation Glide.glide
+
+    implementation Coroutines.coroutine
+    implementation Coroutines.coroutine_core
+
 
     implementation project (":feature:movie:ui")
     implementation project (":core:common")

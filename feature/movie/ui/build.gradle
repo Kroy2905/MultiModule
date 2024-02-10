@@ -7,11 +7,11 @@ plugins {
 
 android {
     namespace 'com.feature.movie.ui'
-    compileSdk 33
+    compileSdk Versions.compileSdk
 
     defaultConfig {
         minSdk 24
-        targetSdk 33
+        targetSdk Versions.compileSdk
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -30,19 +30,60 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        compose true
+    }
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
 }
 
 dependencies {
     implementation project (":core:feature_api")
     implementation project (":core:common")
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    implementation project (":feature:movie:Domain")
+
+    implementation Deps.core
+    implementation Deps.appcompat
+    implementation Deps.material
+    implementation Deps.android_lifecycle
+
+    implementation Compose.activity_compose
+    testImplementation Deps.junit
+    androidTestImplementation Deps.junit_test
+    androidTestImplementation Deps.espresso_core
+    implementation platform(Compose.bom)
+    implementation Compose.ui
+    implementation Compose.ui_graphics
+    implementation Compose.tooling_preview
+    implementation Compose.material3
+    androidTestImplementation platform(Compose.bom)
+    androidTestImplementation Compose.ui_test
+    debugImplementation Compose.tooling
+    debugImplementation Compose.test_manifest
+
+    //CoilImage
+
+    implementation ColiImage.coil
+
+
+
+
     implementation Compose.navGraph
     // Dagger Hilt for dependency injection
     implementation Dagger.dagger
     kapt Dagger.dagger_compiler
+    implementation Dagger.hilt_navigation
+
 }
