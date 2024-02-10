@@ -1,4 +1,6 @@
 object Versions{
+        const val minSdk = "34"
+         const val compileSdk = "34"
         const val  corektx = "1.8.0"
         const val  appcomat = "1.6.1"
         const val  android_lifecyle = "2.3.1"
