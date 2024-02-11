@@ -44,7 +44,7 @@ android {
         correctErrorTypes true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion '1.3.2'
+        kotlinCompilerExtensionVersion Versions.kotlin_compiler_ext
     }
     packagingOptions {
         resources {
@@ -125,6 +125,8 @@ dependencies {
 
 
     implementation project (":feature:movie:ui")
+    implementation project (":feature:movie:Domain")
+    implementation project (":feature:movie:data")
     implementation project (":core:common")
     implementation project (":core:feature_api")
     implementation Compose.navGraph
