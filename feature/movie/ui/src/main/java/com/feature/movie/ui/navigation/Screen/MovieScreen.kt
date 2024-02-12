@@ -19,6 +19,10 @@ import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -32,14 +36,18 @@ import coil.compose.AsyncImage
 @Composable
 fun MovieScreen(viewModel: MovieSearchViewModel){
     val result = viewModel.movieList.value
-    val query = viewModel.query.collectAsState()
+    var query by remember {
+        mutableStateOf("")
+    }
 
 
     Scaffold (topBar = {
         TextField(
             modifier= Modifier.fillMaxWidth(),
-            value = query.value,
+            value = query,
             onValueChange = {
+                Log.d("full path->",it)
+                query = it
             viewModel.setQuery(it)
         },
         colors = TextFieldDefaults.textFieldColors(
