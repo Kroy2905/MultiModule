@@ -1,25 +1,22 @@
-
-import Versions.coil
-import Versions.coil_accomp
 import Versions.hilt_nav
 import Versions.lifecycle_version
 
 object Versions{
-        const val minSdk = 24
-         const val compileSdk = 34
-        const val  corektx = "1.8.0"
-        const val  appcomat = "1.6.1"
-        const val  android_lifecyle = "2.3.1"
-        const val  activity_compose = "1.5.1"
-        const val  kotlin_compiler_ext = "1.3.2"
-        const val  junit = "4.13.2"
-        const val  junit_test = "1.1.5"
-        const val  espresso_core = "3.5.1"
-        const val  retrofit = "2.9.0"
-        const val  okhttp = "5.0.0-alpha.11"
-        const val  gson = "2.10.1"
-        const val  dagger_hilt = "2.42"
-        const val  compose_nav = "2.4.0-alpha10"
+    const val minSdk = 24
+    const val compileSdk = 34
+    const val  corektx = "1.8.0"
+    const val  appcomat = "1.6.1"
+    const val  android_lifecyle = "2.3.1"
+    const val  activity_compose = "1.5.1"
+    const val  kotlin_compiler_ext = "1.5.1"
+    const val  junit = "4.13.2"
+    const val  junit_test = "1.1.5"
+    const val  espresso_core = "3.5.1"
+    const val  retrofit = "2.9.0"
+    const val  okhttp = "5.0.0-alpha.11"
+    const val  gson = "2.10.1"
+    const val  dagger_hilt = "2.46"
+    const val  compose_nav = "2.4.0-alpha10"
     const val lifecycle_version = "2.7.0"
     const val arch_version = "2.1.0"
     const val coroutine = "1.6.4"
@@ -34,7 +31,7 @@ object Versions{
 //Android dependencies
 object Deps{
     const val  core = "androidx.core:core-ktx:${Versions.corektx}"
-   const val  appcompat = "androidx.appcompat:appcompat:${Versions.appcomat}"
+    const val  appcompat = "androidx.appcompat:appcompat:${Versions.appcomat}"
     const val  kotlin_bom = "org.jetbrains.kotlin:kotlin-bom:${Versions.corektx}"
     const val  android_lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.android_lifecyle}"
     const val  junit = "junit:junit:${Versions.junit}"
@@ -68,7 +65,7 @@ object Retrofit{
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
 
-    }
+}
 object Glide{
     const val glide = "com.github.bumptech.glide:glide:${Versions.glide}"
 }
