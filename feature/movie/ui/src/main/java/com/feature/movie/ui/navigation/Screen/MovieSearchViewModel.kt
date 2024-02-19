@@ -1,4 +1,4 @@
-package com.feature.movie.ui.navigation.Screen
+ package com.feature.movie.ui.navigation.Screen
 
 import android.util.Log
 import androidx.compose.runtime.State
@@ -15,7 +15,6 @@ import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.flow.debounce
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
