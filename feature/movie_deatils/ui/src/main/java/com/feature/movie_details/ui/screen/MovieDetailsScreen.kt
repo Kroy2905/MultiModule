@@ -7,9 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.lazy.grid.GridCells
-import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
-import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.layout.wrapContentSize
+
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.CircularProgressIndicator
@@ -30,6 +29,7 @@ import coil.compose.AsyncImage
 @Composable
 fun MovieDetailsScreen(id:String,viewModel: MovieDetailsViewModel){
     val result = viewModel.movieDetails.value
+    Log.d("MovieDetails->",result.toString())
     
     Scaffold (topBar = { TopAppBar(title = {
         Text(text = "Movide Details") })
@@ -54,7 +54,7 @@ fun MovieDetailsScreen(id:String,viewModel: MovieDetailsViewModel){
 
         result.data?.let {
       Column (modifier = Modifier
-          .fillMaxSize()
+          .wrapContentSize()
           .verticalScroll(rememberScrollState())){
           AsyncImage(
               model = it.imageUrl,
@@ -68,8 +68,8 @@ fun MovieDetailsScreen(id:String,viewModel: MovieDetailsViewModel){
           Box(modifier = Modifier.fillMaxWidth()){
               Column(Modifier.fillMaxWidth()) {
 
-                  Text(text = it.title, style = MaterialTheme.typography.labelMedium)
-                  Text(text = it.desc, style = MaterialTheme.typography.bodyMedium)
+                  Text(text = it.title, style = MaterialTheme.typography.titleLarge)
+                  Text(text = it.desc, style = MaterialTheme.typography.bodyLarge)
               }
           }
 

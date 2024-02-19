@@ -8,7 +8,7 @@ import com.feature.movie.domain.model.Movie
     fun MovieListResponse.toDomainMovieList():List<Movie>{
         return  this.results.map {
             Log.d("full path->",makeFullurl(it.poster_path))
-            Movie(makeFullurl(it.poster_path) )
+            Movie(makeFullurl(it.poster_path),it.id.toString() )
         }
     }
 

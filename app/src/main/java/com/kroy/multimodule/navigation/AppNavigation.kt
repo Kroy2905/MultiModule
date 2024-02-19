@@ -14,6 +14,9 @@ fun AppNavGraph(
         navigationProvider.movieApi.registerGraph(
             navController,this
         )
+        navigationProvider.movieDetailsApi.registerGraph(
+            navController,this
+        )
     }
 
 }

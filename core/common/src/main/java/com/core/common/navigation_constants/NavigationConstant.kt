@@ -7,8 +7,8 @@ object MovieFeature{
 }
 
 object MovieDetailsFeature{
-    const val  nestedRoute = "movie__details_nested_route"
-    const val  movieScreenRoute = "movie__details/{id}"
+    const val  nestedRoute = "movie_details_nested_route"
+    const val  movieScreenRoute = "movie_details/{id}"
 
 }
 
