@@ -13,6 +13,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 object AppModule {
 
+
     @Provides
     fun provideNavigationProvider(movieApi: MovieApi,movieDetailsApi: MovieDetailsApi):NavigationProvider{
         return NavigationProvider(movieApi,movieDetailsApi)
