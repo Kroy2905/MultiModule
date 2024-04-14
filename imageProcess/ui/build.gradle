@@ -1,0 +1,72 @@
+plugins {
+    id 'com.android.library'
+    id 'org.jetbrains.kotlin.android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin' // Apply Hilt plugin here
+}
+
+android {
+    namespace 'com.imageProcess.ui'
+    compileSdk Versions.compileSdk
+
+    defaultConfig {
+        minSdk 24
+        targetSdk Versions.compileSdk
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation project (":core:feature_api")
+    implementation project (":core:common")
+    implementation project (":imageProcess:domain")
+
+    implementation Deps.core
+    implementation Deps.appcompat
+    implementation Deps.material
+    implementation Deps.android_lifecycle
+
+    implementation Compose.activity_compose
+    testImplementation Deps.junit
+    androidTestImplementation Deps.junit_test
+    androidTestImplementation Deps.espresso_core
+    implementation platform(Compose.bom)
+    implementation Compose.ui
+    implementation Compose.ui_graphics
+    implementation Compose.tooling_preview
+    implementation Compose.material3
+    androidTestImplementation platform(Compose.bom)
+    androidTestImplementation Compose.ui_test
+    debugImplementation Compose.tooling
+    debugImplementation Compose.test_manifest
+
+    //CoilImage
+
+    implementation ColiImage.coil
+
+
+
+
+    implementation Compose.navGraph
+    // Dagger Hilt for dependency injection
+    implementation Dagger.dagger
+    kapt Dagger.dagger_compiler
+    implementation Dagger.hilt_navigation
+}
