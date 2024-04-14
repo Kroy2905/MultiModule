@@ -30,6 +30,22 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+    buildFeatures {
+        compose true
+    }
+    // Allow references to generated code
+    kapt {
+        correctErrorTypes true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion Versions.kotlin_compiler_ext
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+
 }
 
 dependencies {

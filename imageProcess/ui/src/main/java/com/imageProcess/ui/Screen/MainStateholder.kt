@@ -1,5 +1,11 @@
 package com.imageProcess.ui.Screen
 
-class MainStateholder {
+import com.imageProcess.domain.model.imageItem
 
-}
+class MainStateholder (
+    val isLoading : Boolean = false,
+    val data : List<imageItem>?=null,
+    val error :String = ""
+)
+
+

@@ -43,7 +43,8 @@ fun MovieScreen(viewModel: MovieSearchViewModel,navController: NavController){
     }
 
 
-    Scaffold (topBar = {
+    Scaffold (
+        topBar = {
         TextField(
             modifier= Modifier.fillMaxWidth(),
             value = query,

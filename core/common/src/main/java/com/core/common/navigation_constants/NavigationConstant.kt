@@ -13,3 +13,11 @@ object MovieDetailsFeature{
 
 }
 
+object ImageProcess{
+    const val  nestedRoute = "image_process_nested_route"
+    const val  screenRoute = "image_loading_screen"
+
+}
+
+
+

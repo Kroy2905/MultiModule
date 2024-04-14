@@ -1,7 +1,0 @@
-API KEY - 9011c63707a23c0975e5af8af126617b
-
-API READ ACCESS TOKEN - eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI5MDExYzYzNzA3YTIzYzA5NzVlNWFmOGFmMTI2NjE3YiIsInN1YiI6IjY1YmUyZDU4MTJjNjA0MDE2MmZmYTM0OCIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.e0cM1VxAWcgphFmCnX_La7yK6uIvDfRegVHqV7K3uJg
-
-APIs :
-search : https://api.themoviedb.org/3/search/movie
-movie details : https://api.themoviedb.org/3/movie/{movie_id}
