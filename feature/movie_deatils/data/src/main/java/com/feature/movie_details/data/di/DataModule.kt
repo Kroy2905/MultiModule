@@ -1,6 +1,6 @@
 package com.feature.movie_details.data.di
 
-import com.core.network.dataproviders.MovieDataProviders
+import com.core.network.dataproviders.NetworkDataProviders
 import com.feature.movie_deatils.domain.repository.MovieDetailsrepo
 import com.feature.movie_details.data.repo.MovieDetailsRepoImpl
 import dagger.Module
@@ -16,7 +16,7 @@ object DataModule {
 
 
     @Provides
-    fun provideMovieDetailsRepo(movieDataProviders: MovieDataProviders):MovieDetailsrepo{
-        return MovieDetailsRepoImpl(movieDataProviders)
+    fun provideMovieDetailsRepo(networkDataProviders: NetworkDataProviders):MovieDetailsrepo{
+        return MovieDetailsRepoImpl(networkDataProviders)
     }
 }

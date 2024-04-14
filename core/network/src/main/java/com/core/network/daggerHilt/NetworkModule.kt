@@ -1,7 +1,7 @@
 package com.core.network.daggerHilt
 
 import com.core.network.ApiService
-import com.core.network.dataproviders.MovieDataProviders
+import com.core.network.dataproviders.NetworkDataProviders
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -31,7 +31,8 @@ object NetworkModule {
 
     @Provides
     fun provideApiService():ApiService{
-        return Retrofit.Builder().baseUrl("https://api.themoviedb.org/")
+       // return Retrofit.Builder().baseUrl("https://api.themoviedb.org/")
+        return Retrofit.Builder().baseUrl("https://api.unsplash.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
             .create(ApiService::class.java)
@@ -39,7 +40,7 @@ object NetworkModule {
     }
 
     @Provides
-    fun provideMovieDataProvider(apiService: ApiService):MovieDataProviders{
-        return MovieDataProviders(apiService)
+    fun provideNetworkDataProvider(apiService: ApiService):NetworkDataProviders{
+        return NetworkDataProviders(apiService)
     }
 }
