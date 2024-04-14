@@ -36,6 +36,10 @@
             <option value="$PROJECT_DIR$/feature/movie_deatils/data" />
             <option value="$PROJECT_DIR$/feature/movie_deatils/domain" />
             <option value="$PROJECT_DIR$/feature/movie_deatils/ui" />
+            <option value="$PROJECT_DIR$/imageProcess" />
+            <option value="$PROJECT_DIR$/imageProcess/data" />
+            <option value="$PROJECT_DIR$/imageProcess/domain" />
+            <option value="$PROJECT_DIR$/imageProcess/ui" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />
