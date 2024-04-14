@@ -24,7 +24,7 @@ include ':feature:movie_deatils:ui'
 include ':core:network'
 include ':core:common'
 include ':core:feature_api'
-include ':imageProcess'
+
 
 include ':imageProcess:data'
 include ':imageProcess:domain'
