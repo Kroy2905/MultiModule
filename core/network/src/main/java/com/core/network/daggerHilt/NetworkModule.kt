@@ -31,7 +31,7 @@ object NetworkModule {
 
     @Provides
     fun provideApiService():ApiService{
-       // return Retrofit.Builder().baseUrl("https://api.themoviedb.org/")
+
         return Retrofit.Builder().baseUrl("https://api.unsplash.com")
             .addConverterFactory(GsonConverterFactory.create())
             .build()

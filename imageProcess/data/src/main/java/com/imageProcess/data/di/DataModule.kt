@@ -11,7 +11,7 @@ import dagger.hilt.components.SingletonComponent
 
 @InstallIn(SingletonComponent::class)
 @Module
-class DataModule {
+object DataModule {
     @Provides
     fun provideImageRepo(networkDataProviders: NetworkDataProviders):imgeRepository{
         return ImageRepoImpl(networkDataProviders = networkDataProviders)
