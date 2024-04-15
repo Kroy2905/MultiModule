@@ -26,16 +26,6 @@
             <option value="$PROJECT_DIR$/core/common" />
             <option value="$PROJECT_DIR$/core/feature_api" />
             <option value="$PROJECT_DIR$/core/network" />
-            <option value="$PROJECT_DIR$/feature" />
-            <option value="$PROJECT_DIR$/feature/movie" />
-            <option value="$PROJECT_DIR$/feature/movie/Domain" />
-            <option value="$PROJECT_DIR$/feature/movie/data" />
-            <option value="$PROJECT_DIR$/feature/movie/domain" />
-            <option value="$PROJECT_DIR$/feature/movie/ui" />
-            <option value="$PROJECT_DIR$/feature/movie_deatils" />
-            <option value="$PROJECT_DIR$/feature/movie_deatils/data" />
-            <option value="$PROJECT_DIR$/feature/movie_deatils/domain" />
-            <option value="$PROJECT_DIR$/feature/movie_deatils/ui" />
             <option value="$PROJECT_DIR$/imageProcess" />
             <option value="$PROJECT_DIR$/imageProcess/data" />
             <option value="$PROJECT_DIR$/imageProcess/domain" />

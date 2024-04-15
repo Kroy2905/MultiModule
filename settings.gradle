@@ -14,13 +14,9 @@ dependencyResolutionManagement {
 }
 rootProject.name = "MultiModuleApp"
 include ':app'
-include ':feature:movie:data'
-include ':feature:movie:domain'
-include ':feature:movie:ui'
-include ':feature:movie:Domain'
-include ':feature:movie_deatils:data'
-include ':feature:movie_deatils:domain'
-include ':feature:movie_deatils:ui'
+
+
+
 include ':core:network'
 include ':core:common'
 include ':core:feature_api'
