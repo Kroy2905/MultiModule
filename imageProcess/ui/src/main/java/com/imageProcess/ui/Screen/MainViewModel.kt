@@ -45,7 +45,7 @@ class MainViewModel  @Inject constructor(private val  getImageListUseCase: GetIm
             clientId = CLIENT_ID,
             page = page,
             perPage = 30  // per page return 30
-        ).onEach {
+        ).onEach { // observe each event of the getImageListUsecase
             when(it){
                 is UiEvent.Loading->{
                     _imageList.value = MainStateholder(isLoading = true)

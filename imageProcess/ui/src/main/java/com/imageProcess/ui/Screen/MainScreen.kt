@@ -53,12 +53,12 @@ import java.net.URL
 fun MainScreen(viewModel: MainViewModel, navController: NavController) {
     val result = viewModel.imageList.value
     var page by remember { mutableStateOf(1) }
-    val scrollState = rememberLazyListState()
     val gridState = rememberLazyGridState()
-    val allImages = remember { mutableStateListOf<imageItem>() }
+    val allImages = remember { mutableStateListOf<imageItem>() } // stores the downloaded data
     /**
      * LanuchedEffect is used to launch the block in the Coroutine Context of the composoble
      * its used for asynchronous functionality
+     * it obseves the result
      */
     LaunchedEffect(result) {
         if (result != null && !result.isLoading && result.error.isBlank() && result.data != null) {
@@ -87,7 +87,7 @@ fun MainScreen(viewModel: MainViewModel, navController: NavController) {
         } else if (result?.error?.isNotBlank() == true && allImages.isEmpty()) {
             ErrorText(result.error)
         } else if (allImages.isEmpty()) {
-            EmptyStateText("Nothing Found")
+            EmptyStateText("No Images to show")
         }
     }
 }
@@ -159,20 +159,17 @@ private fun ImageItem(imageData: imageItem) {
 private suspend fun loadImage(url: String): ImageBitmap? {
     return withContext(Dispatchers.IO) {
         try {
-            Log.d("Multimodule->","Check point 1")
+
             val connection = URL(url).openConnection() as HttpURLConnection
             connection.doInput = true
             connection.connect()
             val inputStream = connection.inputStream
-            Log.d("Multimodule->","Check point 1")
             val bitmap = BitmapFactory.decodeStream(inputStream)
-            Log.d("Multimodule->","Check point 3")
             inputStream.close()
             connection.disconnect()
             bitmap?.asImageBitmap()
         } catch (e: IOException) {
             e.printStackTrace()
-            Log.d("Multimodule->","Check point 4")
             null
         }
     }
