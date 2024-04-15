@@ -1,6 +1,9 @@
 package com.imageProcess.ui.Screen
 
 import android.annotation.SuppressLint
+import android.graphics.BitmapFactory
+import android.util.Log
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Box
@@ -19,6 +22,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateListOf
@@ -28,11 +32,19 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import coil.compose.AsyncImage
 import com.imageProcess.domain.model.imageItem
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.withContext
+import java.io.IOException
+import java.net.HttpURLConnection
+import java.net.URL
 
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
@@ -110,21 +122,60 @@ fun MainScreen(viewModel: MainViewModel, navController: NavController) {
         }
     }
 
-    @Composable
-    private fun ImageItem(imageData: imageItem) {
-        Box(
-            modifier = Modifier
-                .height(100.dp)
-                .width(100.dp)
-                .border(0.9.dp, color = Color.Gray)
-        ) {
-            AsyncImage(
 
-                model = imageData.imageUrl,
+@Composable
+private fun ImageItem(imageData: imageItem) {
+    var bitmapState by remember { mutableStateOf<ImageBitmap?>(null) }
+
+    LaunchedEffect(imageData.imageUrl) {
+        try {
+            val bitmap = loadImage(imageData.imageUrl)
+            bitmapState = bitmap
+        } catch (e: IOException) {
+            // Handle the error, e.g., show a placeholder image
+        }
+    }
+
+    Box(
+        modifier = Modifier
+            .height(100.dp)
+            .width(100.dp)
+            .border(1.dp, color = Color.Gray),
+        contentAlignment = Alignment.Center
+    ) {
+        val bitmap = bitmapState
+        bitmap?.let {
+            Image(
+                bitmap = it,
                 contentDescription = null,
-                contentScale = ContentScale.Crop
+                contentScale = ContentScale.Crop,
+                modifier = Modifier.fillMaxSize() // Fill the entire Box
             )
         }
     }
+}
+
+
+private suspend fun loadImage(url: String): ImageBitmap? {
+    return withContext(Dispatchers.IO) {
+        try {
+            Log.d("Multimodule->","Check point 1")
+            val connection = URL(url).openConnection() as HttpURLConnection
+            connection.doInput = true
+            connection.connect()
+            val inputStream = connection.inputStream
+            Log.d("Multimodule->","Check point 1")
+            val bitmap = BitmapFactory.decodeStream(inputStream)
+            Log.d("Multimodule->","Check point 3")
+            inputStream.close()
+            connection.disconnect()
+            bitmap?.asImageBitmap()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Log.d("Multimodule->","Check point 4")
+            null
+        }
+    }
+}
 
 
