@@ -73,9 +73,6 @@ dependencies {
     debugImplementation Compose.tooling
     debugImplementation Compose.test_manifest
 
-    //CoilImage
-
-    implementation ColiImage.coil
 
 
 

@@ -8,6 +8,8 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
+import androidx.core.view.WindowCompat
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.kroy.multimodule.navigation.AppNavGraph
@@ -22,6 +24,10 @@ class MainActivity : ComponentActivity() {
     lateinit var  navigationProvider: NavigationProvider
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        // Change the notification bar color to red
+        window.statusBarColor = Color.Red.hashCode()
+
         setContent {
 
             MultiModuleAppTheme {
