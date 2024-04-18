@@ -1,7 +1,7 @@
 # Image Loader App using Jetpack Compose and MVVM architecture
 
 ## Overview
-This Android application is designed to load images continuously as you scroll down (infinie scroll feature). This application uses MVVM architecture for api connection and jetpack compose for image presentation. **No third party library 
+This Android application is designed to load images continuously as you scroll down (infinite scroll feature). This application uses MVVM architecture for api connection and jetpack compose for image presentation. **No third party library 
 has been used for rendering images.**
 
 ## Features
