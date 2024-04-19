@@ -16,12 +16,3 @@ rootProject.name = "MultiModuleApp"
 include ':app'
 
 
-
-include ':core:network'
-include ':core:common'
-include ':core:feature_api'
-
-
-include ':imageProcess:data'
-include ':imageProcess:domain'
-include ':imageProcess:ui'

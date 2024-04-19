@@ -61,6 +61,9 @@ dependencies {
     implementation platform(Deps.kotlin_bom)
     implementation Deps.android_lifecycle
     implementation Compose.activity_compose
+    implementation 'androidx.appcompat:appcompat:1.6.1'
+    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation Deps.junit
     androidTestImplementation Deps.junit_test
     androidTestImplementation Deps.espresso_core
@@ -124,12 +127,6 @@ dependencies {
     implementation Coroutines.coroutine_core
 
 
-
-    implementation project (":core:common")
-    implementation project (":core:feature_api")
-    implementation project (":imageProcess:data")
-    implementation project (":imageProcess:ui")
-    implementation project (":imageProcess:domain")
     implementation Compose.navGraph
 
 }
