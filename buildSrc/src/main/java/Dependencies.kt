@@ -26,6 +26,8 @@ object Versions{
     const val coil_accomp= "0.19.0"
     const val hilt_nav= "1.1.0"
     const val material= "1.11.0"
+   const val paging_version = "3.2.1"
+   const val paging_compose = "3.3.0-beta01"
 
 }
 //Android dependencies
@@ -64,6 +66,16 @@ object Retrofit{
     const val gson_converter = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
     const val okhttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
     const val gson = "com.google.code.gson:gson:${Versions.gson}"
+
+}
+
+object Paging{
+    const val runtime = "androidx.paging:paging-runtime:${Versions.paging_version}"
+    const val test_common = "androidx.paging:paging-common:${Versions.paging_version}"
+    const val rxJava2 = "androidx.paging:paging-rxjava2:${Versions.paging_version}"
+    const val rxJava3 = "androidx.paging:paging-rxjava3:${Versions.paging_version}"
+    const val guava = "androidx.paging:paging-guava:${Versions.paging_version}"
+    const val compose = "androidx.paging:paging-compose:${Versions.paging_compose}"
 
 }
 object Glide{

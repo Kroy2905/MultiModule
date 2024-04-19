@@ -22,14 +22,6 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/buildSrc" />
-            <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/common" />
-            <option value="$PROJECT_DIR$/core/feature_api" />
-            <option value="$PROJECT_DIR$/core/network" />
-            <option value="$PROJECT_DIR$/imageProcess" />
-            <option value="$PROJECT_DIR$/imageProcess/data" />
-            <option value="$PROJECT_DIR$/imageProcess/domain" />
-            <option value="$PROJECT_DIR$/imageProcess/ui" />
           </set>
         </option>
         <option name="resolveExternalAnnotations" value="false" />

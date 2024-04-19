@@ -60,22 +60,14 @@ dependencies {
     implementation Deps.appcompat
     implementation platform(Deps.kotlin_bom)
     implementation Deps.android_lifecycle
-    implementation Compose.activity_compose
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-    implementation 'com.google.android.material:material:1.11.0'
+
+
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     testImplementation Deps.junit
     androidTestImplementation Deps.junit_test
     androidTestImplementation Deps.espresso_core
-    implementation platform(Compose.bom)
-    implementation Compose.ui
-    implementation Compose.ui_graphics
-    implementation Compose.tooling_preview
-    implementation Compose.material3
-    androidTestImplementation platform(Compose.bom)
-    androidTestImplementation Compose.ui_test
-    debugImplementation Compose.tooling
-    debugImplementation Compose.test_manifest
+
+
 
     // Retrofit for making network requests
     implementation Retrofit.retrofit
@@ -121,12 +113,30 @@ dependencies {
     // optional - Test helpers for Lifecycle runtime
     testImplementation Viewmodel.runtime_testing
 
-    implementation Glide.glide
+
 
     implementation Coroutines.coroutine
     implementation Coroutines.coroutine_core
 
+    dependencies {
+        def paging_version = "3.2.1"
 
-    implementation Compose.navGraph
+        implementation Paging.runtime
+
+        // alternatively - without Android dependencies for tests
+        testImplementation Paging.test_common
+
+        // optional - RxJava2 support
+        implementation Paging.rxJava2
+
+        // optional - RxJava3 support
+        implementation Paging.rxJava3
+
+        // optional - Guava ListenableFuture support
+        implementation Paging.guava
+
+        // optional - Jetpack Compose integration
+        implementation Paging.compose
+    }
 
 }
