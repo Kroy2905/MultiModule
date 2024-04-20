@@ -1,4 +1,4 @@
-# Image Loader App using Jetpack Compose and MVVM architecture
+# Paginator 
 
 ## Overview
 This Android application is designed to load data continuously as you scroll down (infinite scroll feature) usng the pagination technique. This application uses MVVM architecture for api connection and recyclerView for data presentation. **It uses Paging dependency for pagination and caching**
