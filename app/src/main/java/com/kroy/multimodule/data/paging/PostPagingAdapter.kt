@@ -51,8 +51,13 @@ class PostPagingAdapter  : PagingDataAdapter<postResponseItem, PostPagingAdapter
             holder.id.text = item.id.toString()
             holder.userID.text = item.userId.toString()
 
+            // Reset the visibility of bodyLayout and background tint of root
+            holder.bodyLayout.visibility = if (item.isBodyVisible) View.VISIBLE else View.GONE
+            val colorCode = 0xFFFFF8E3.toInt() // Define your color code here
+            holder.root.backgroundTintList = if (item.isBodyVisible) ColorStateList.valueOf(colorCode) else null
         }
     }
+
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

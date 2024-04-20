@@ -4,5 +4,6 @@ data class postResponseItem(
     val body: String,
     val id: Int,
     val title: String,
-    val userId: Int
+    val userId: Int,
+    val isBodyVisible:Boolean
 )
