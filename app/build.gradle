@@ -37,7 +37,8 @@ android {
         jvmTarget = '1.8'
     }
     buildFeatures {
-        compose true
+       // compose true
+        viewBinding = true
     }
     // Allow references to generated code
     kapt {
@@ -63,6 +64,7 @@ dependencies {
 
 
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
+    implementation 'androidx.cardview:cardview:1.0.0'
     testImplementation Deps.junit
     androidTestImplementation Deps.junit_test
     androidTestImplementation Deps.espresso_core
